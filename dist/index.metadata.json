@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./signaturepad.module"},{"from":"./components/ionicsignaturepad.component"},{"from":"./providers/ionicsignaturepad.provider"}]}]
