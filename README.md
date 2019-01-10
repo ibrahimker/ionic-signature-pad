@@ -57,3 +57,11 @@ IonicsignaturepadComponent,
 //Base 64 image of the signature
 <p>{{signature}}</p>
 ```
+
+4. You can also use it with optional options: 
+```
+<ion-signaturepad [(ngModel)]="signature" [canvasWidth]="300" [canvasHeight]="300" [backgroundColor]="#ffffff"></signature>
+
+//Base 64 image of the signature
+<p>{{signature}}</p>
+```

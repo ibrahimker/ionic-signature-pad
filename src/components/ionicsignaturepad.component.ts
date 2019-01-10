@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component,Input, OnInit,ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import {SignaturePad} from 'angular2-signaturepad/signature-pad';
 
 const HTML_TEMPLATE = `
 <ion-row>
-	<ion-col style="text-align:right;" class="no-padding">
-		<ion-button fill="clear" (click)="drawClear()" style="--padding-top: 0; --padding-bottom: 0; --padding-start: 0; --padding-end: 0; --margin-top: 4px; --margin-bottom: 0; --margin-start: 0; --margin-end: 8px;"><ion-icon slot="icon-only" name="close" color="dark"></ion-icon></ion-button>
-	</ion-col>
+<ion-col style="text-align:right;" class="no-padding">
+<ion-button fill="clear" (click)="drawClear()" style="--padding-top: 0; --padding-bottom: 0; --padding-start: 0; --padding-end: 0; --margin-top: 4px; --margin-bottom: 0; --margin-start: 0; --margin-end: 8px;"><ion-icon slot="icon-only" name="close" color="dark"></ion-icon></ion-button>
+</ion-col>
 </ion-row>
 <signature-pad [options]="signaturePadOptions" id="signatureCanvas" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>`;
 
@@ -23,15 +23,17 @@ export class IonicsignaturepadComponent implements OnInit,ControlValueAccessor {
 
 	@ViewChild(SignaturePad) public signaturePad : SignaturePad;
 
-	public signaturePadOptions : Object = {
-		'minWidth': 2,
-		'canvasWidth': 800,
-		'canvasHeight': 240,
-		'backgroundColor':'rgb(255,255,255)'
-	};
+	public signaturePadOptions : any = {};
 	public signatureImage : string;
 
-	constructor() { }
+	constructor() {
+		this.signaturePadOptions = {
+			minWidth: 2,
+			canvasWidth: 800,
+			canvasHeight: 240,
+			backgroundColor:'rgb(255,255,255)'
+		}
+	}
 
 	ngOnInit() {
 	}
@@ -41,6 +43,18 @@ export class IonicsignaturepadComponent implements OnInit,ControlValueAccessor {
 
 	onChange(data) {
 		
+	}
+
+	@Input() set canvasWidth(data: number) {
+		this.signaturePadOptions.canvasWidth = data;
+	}
+
+	@Input() set canvasHeight(data: number) {
+		this.signaturePadOptions.canvasHeight = data;
+	}
+
+	@Input() set backgroundColor(data: string) {
+		this.signaturePadOptions.backgroundColor = data;
 	}
 
 	// Allow Angular to set the value on the component

@@ -1,22 +1,44 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SignaturePad } from 'angular2-signaturepad/signature-pad';
-var HTML_TEMPLATE = "\n<ion-row>\n\t<ion-col style=\"text-align:right;\" class=\"no-padding\">\n\t\t<ion-button fill=\"clear\" (click)=\"drawClear()\" style=\"--padding-top: 0; --padding-bottom: 0; --padding-start: 0; --padding-end: 0; --margin-top: 4px; --margin-bottom: 0; --margin-start: 0; --margin-end: 8px;\"><ion-icon slot=\"icon-only\" name=\"close\" color=\"dark\"></ion-icon></ion-button>\n\t</ion-col>\n</ion-row>\n<signature-pad [options]=\"signaturePadOptions\" id=\"signatureCanvas\" (onBeginEvent)=\"drawStart()\" (onEndEvent)=\"drawComplete()\"></signature-pad>";
+var HTML_TEMPLATE = "\n<ion-row>\n<ion-col style=\"text-align:right;\" class=\"no-padding\">\n<ion-button fill=\"clear\" (click)=\"drawClear()\" style=\"--padding-top: 0; --padding-bottom: 0; --padding-start: 0; --padding-end: 0; --margin-top: 4px; --margin-bottom: 0; --margin-start: 0; --margin-end: 8px;\"><ion-icon slot=\"icon-only\" name=\"close\" color=\"dark\"></ion-icon></ion-button>\n</ion-col>\n</ion-row>\n<signature-pad [options]=\"signaturePadOptions\" id=\"signatureCanvas\" (onBeginEvent)=\"drawStart()\" (onEndEvent)=\"drawComplete()\"></signature-pad>";
 var IonicsignaturepadComponent = /** @class */ (function () {
     function IonicsignaturepadComponent() {
-        this.signaturePadOptions = {
-            'minWidth': 2,
-            'canvasWidth': 800,
-            'canvasHeight': 240,
-            'backgroundColor': 'rgb(255,255,255)'
-        };
+        this.signaturePadOptions = {};
         this.onTouch = function () { };
         this.disabled = false;
+        this.signaturePadOptions = {
+            minWidth: 2,
+            canvasWidth: 800,
+            canvasHeight: 240,
+            backgroundColor: 'rgb(255,255,255)'
+        };
     }
     IonicsignaturepadComponent.prototype.ngOnInit = function () {
     };
     IonicsignaturepadComponent.prototype.onChange = function (data) {
     };
+    Object.defineProperty(IonicsignaturepadComponent.prototype, "canvasWidth", {
+        set: function (data) {
+            this.signaturePadOptions.canvasWidth = data;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(IonicsignaturepadComponent.prototype, "canvasHeight", {
+        set: function (data) {
+            this.signaturePadOptions.canvasHeight = data;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(IonicsignaturepadComponent.prototype, "backgroundColor", {
+        set: function (data) {
+            this.signaturePadOptions.backgroundColor = data;
+        },
+        enumerable: true,
+        configurable: true
+    });
     // Allow Angular to set the value on the component
     IonicsignaturepadComponent.prototype.writeValue = function (value) {
         this.onChange(value);
@@ -68,7 +90,10 @@ var IonicsignaturepadComponent = /** @class */ (function () {
     /** @nocollapse */
     IonicsignaturepadComponent.ctorParameters = function () { return []; };
     IonicsignaturepadComponent.propDecorators = {
-        signaturePad: [{ type: ViewChild, args: [SignaturePad,] }]
+        signaturePad: [{ type: ViewChild, args: [SignaturePad,] }],
+        canvasWidth: [{ type: Input }],
+        canvasHeight: [{ type: Input }],
+        backgroundColor: [{ type: Input }]
     };
     return IonicsignaturepadComponent;
 }());
