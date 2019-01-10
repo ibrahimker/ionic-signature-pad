@@ -52,7 +52,7 @@ IonicsignaturepadComponent,
 
 4. Use it in respective html like this: 
 ```
-<ion-signaturepad [(ngModel)]="signature"></signature>
+<ion-signaturepad [(ngModel)]="signature"></ion-signature>
 
 //Base 64 image of the signature
 <p>{{signature}}</p>
@@ -60,7 +60,7 @@ IonicsignaturepadComponent,
 
 4. You can also use it with optional options: 
 ```
-<ion-signaturepad [(ngModel)]="signature" [canvasWidth]="300" [canvasHeight]="300" [backgroundColor]="#ffffff"></signature>
+<ion-signaturepad [(ngModel)]="signature" [canvasWidth]="300" [canvasHeight]="300" [backgroundColor]="#ffffff"></ion-signature>
 
 //Base 64 image of the signature
 <p>{{signature}}</p>
