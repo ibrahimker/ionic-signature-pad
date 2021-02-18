@@ -30,12 +30,80 @@
                   "class": "element-shape hasNoOpenThreats isInScope"
                 },
                 "text": {
-                  "text": "actor 0"
+                  "text": "subscriber"
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
                 }
               }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 47,
+                "y": 360
+              },
+              "angle": 0,
+              "id": "0facdab1-7f11-4ee3-9f0b-259811ca733f",
+              "z": 2,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "RA agent"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 330,
+                "y": 78
+              },
+              "angle": 0,
+              "id": "0fb849b0-4f64-449a-b9cc-5112fb06103d",
+              "z": 3,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "sign up in VIDA\napp"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 417,
+                "y": 7
+              },
+              "target": {
+                "x": 45,
+                "y": 262
+              },
+              "vertices": [],
+              "id": "51158fda-59ee-4cf6-803d-fe9403759594",
+              "z": 4,
+              "attrs": {}
             }
           ]
         },
