@@ -1,0 +1,15 @@
+{
+  "summary": {
+    "title": "threat modelling - VIDAapp"
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "title": "threat modelling",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "id": 0
+      }
+    ]
+  }
+}
