@@ -47,7 +47,7 @@
     "angular2-signaturepad": "^2.8.0",
     "core-js": "^2.5.3",
     "ngx": "^2.4.0",
-    "node-sass": "^4.10.0",
+    "node-sass": "^7.0.0",
     "rxjs": "6.2.2",
     "zone.js": "^0.8.26",
     "codelyzer": "~4.5.0",
